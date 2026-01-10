@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ets GOOD DAV NET - Plateforme d'Exposition de Logiciels</title>
+<style>
+body { font-family: Arial, sans-serif; background:#f2f2f2; margin:0; padding:0; }
+header { background:#003366; color:white; padding:20px; text-align:center; }
+header img { border-radius:8px; object-fit:cover; }
+header div { display:inline-block; vertical-align:middle; text-align:left; margin-left:10px; }
+.container { width:95%; margin:auto; display:flex; flex-wrap:wrap; justify-content:center; gap:15px; padding-bottom:50px; }
+.card { background:white; width:260px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.2); padding:10px; text-align:center; display:flex; flex-direction:column; transition: transform 0.3s, box-shadow 0.3s; }
+.card:hover { transform: translateY(-8px); box-shadow:0 8px 20px rgba(0,0,0,0.3); }
+.card img { width:100%; height:170px; object-fit:cover; border-radius:10px; }
+.card h3 { margin:10px 0 5px 0; font-size:18px; color:#003366; }
+.card p { font-size:14px; margin:3px 0; }
+.card a { display:block; margin-top:10px; background:#003366; color:white; padding:10px; text-decoration:none; border-radius:5px; cursor:pointer; transition:0.3s; }
+.card a:hover { background:#0055aa; }
+.card .buy { background:#009900; margin-top:5px; color:white; padding:10px; border:none; border-radius:5px; cursor:pointer; width:100%; transition:0.3s; }
+.card .buy:hover { background:#00bb00; }
+button.closeBtn{background:#cc0000;color:white;padding:8px 12px;border:none;border-radius:5px;cursor:pointer;margin-top:10px; transition:0.3s;}
+button.closeBtn:hover{background:#ff0000;}
+#adminBtn { padding:10px 15px; background:#990099; color:white; border:none; border-radius:5px; cursor:pointer; transition:0.3s; }
+#adminBtn:hover { background:#bb00bb; }
+/* Modals */
+.modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:1000; justify-content:center; align-items:center; animation: fadeIn 0.3s; }
+@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+.modal-content { background:white; width:400px; max-width:90%; padding:20px; border-radius:10px; text-align:center; position:relative; box-shadow:0 0 15px rgba(0,0,0,0.3); transform: translateY(-50px); animation: slideDown 0.3s forwards;}
+@keyframes slideDown { from {transform: translateY(-50px);} to {transform: translateY(0);} }
+.modal-content h3 { margin-top:0; color:#003366; }
+.modal-content input { padding:8px; width:90%; margin:10px 0; border-radius:5px; border:1px solid #ccc; }
+.modal-content button { padding:8px 15px; border:none; border-radius:5px; cursor:pointer; }
+.modal-message { margin:10px 0; color:green; font-weight:bold; }
+.modal-error { margin:10px 0; color:red; font-weight:bold; }
+.modal-content img { width:40%; border-radius:8px; object-fit:cover; margin-top:10px; }
+/* Responsive */
+@media(max-width:600px){ .card{ width:90%; } .modal-content{ width:95%; } }
+</style>
+</head>
+<body>
+
+<header>
+<div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+    <img src="https://i.ibb.co/RGcKcKt8/aim.jpg" style="width:80px; height:80px;">
+    <div>
+        Ets GOOD DAV NET - Exposition de Logiciels<br>
+        <span style="font-size:15px;">Contact & Paiement : +229 01 47 44 24 16 | +229 01 91 16 84 89 — ETAKOUANA DAVID MAHOUTON</span>
+    </div>
+    <div style="display:flex; align-items:center;">
+        <img src="https://i.ibb.co/zW8ZHz1d/image-modifiee-4.png" style="width:80px; height:80px;">
+        <button id="adminBtn" onclick="demanderMotDePasseAdmin()">Admin</button>
+    </div>
+</div>
+</header>
+
+<!-- Vidéo automatique sous l'entête -->
+<div style="width:100%; background:#000; text-align:center;">
+    <iframe
+        width="100%"
+        height="420"
+        src="https://www.youtube.com/embed/oYBjKP48aR4?autoplay=1&mute=1&loop=1&playlist=oYBjKP48aR4&controls=0&rel=0"
+        title="Présentation"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<div class="container">
+
+<!-- Carte 1 -->
+<div class="card">
+    <img src="https://i.ibb.co/4wVk4DF4/CREATEUR-DE-SITE-Web.jpg">
+    <h3>CREATEUR DE SITE WEB</h3>
+    <p>Créez facilement votre site web professionnel sans connaissances en programmation.</p>
+    <p style="font-weight:bold;">Prix : 2000F</p>
+    <a onclick="demanderMotDePasse(this)" data-url="https://download1346.mediafire.com/wgwld5h6hbrgCLz7zfCNo4MtJlGC91ajoV_aPAMAN9s3wYTi9--JbHaqFTWmBlp9fhafhw8xnXxWOISy30T8iTCAP1qglN0mvxZapVMEc4hlzeQ3pnUc-aOcLZ96ITL-7l_xwDiXs4uT8nc4CigBWU9l8VGbTBuU8QAKEsbSxCmOIMc/ovffjj7khlm4xfj/CREATEURE+DE+SITE+WEB.exe">Télécharger</a>
+    <button class="buy" onclick="acheter(this.parentElement.querySelector('h3').innerText)">Acheter</button>
+</div>
+
+<!-- Carte 2 -->
+<div class="card">
+    <img src="https://i.ibb.co/1tX52DzR/CHANGEUR-DE-FOND-DE-PHOTO.jpg">
+    <h3>CHANGEUR DE FOND DE PHOTO</h3>
+    <p>Remplacez automatiquement le fond de vos photos pour un rendu professionnel.</p>
+    <p style="font-weight:bold;">Prix : 2000F</p>
+    <a onclick="demanderMotDePasse(this)" data-url="https://download1335.mediafire.com/g4zvnczw70fgUP69DA8o1Iu0Mofk_zZYQLp-SGvIjsRS-8rEciel02i31DPTiE5YUOYN--lLd6dz5X3RxF2M_4Y-EFAWn6IgMB47zqmFw3UVFkNK3_qI-c7b1FTx545GmdK__XWZ1FKTBHtWJ_6GpHx18U-3iO3-QM0bHBb_1fBFW1I/fh63ir74dcbvcdp/CHANGEUR+DE+FOND+DE+PHOTO.exe">Télécharger</a>
+    <button class="buy" onclick="acheter(this.parentElement.querySelector('h3').innerText)">Acheter</button>
+</div>
+
+<!-- Carte 3 -->
+<div class="card">
+    <img src="https://i.ibb.co/xtq74Twj/IMAGE-TO-TEXT.jpg">
+    <h3>IMAGE TO TEXT</h3>
+    <p>Convertissez instantanément vos images en texte modifiable et exploitable.</p>
+    <p style="font-weight:bold;">Prix : 2000F</p>
+    <a onclick="demanderMotDePasse(this)" data-url="https://download1588.mediafire.com/rnyfwke4iccgtsBm-4IMgIw3I-VWZbm9JiAejaZ6su83OT-F29IfPLmz9g3IIq7eExyeGa_qqpdd0sZjJV3xECTCsN7RSAeBYXYdYQudxve3UR9fPGt9Q0WKszSMHtCOMF0LjaGbR4qxf_zSQbv3mXB1av-PzlmJe4coOdOf4ICiK5E/p4y55z4qz0m0h6e/IMAGE+TO+TEXT.exe">Télécharger</a>
+    <button class="buy" onclick="acheter(this.parentElement.querySelector('h3').innerText)">Acheter</button>
+</div>
+
+<!-- Carte 4 -->
+<div class="card">
+    <img src="https://i.ibb.co/3YdyvWMT/MON-REPERTOIRE-TELEPHONIQUE.png">
+    <h3>MON REPERTOIRE TELEPHONIQUE</h3>
+    <p>Organisez et gérez vos contacts facilement avec ce logiciel pratique.</p>
+    <p style="font-weight:bold;">Prix : 2000F</p>
+    <a onclick="demanderMotDePasse(this)" data-url="https://download1325.mediafire.com/1q3ek5kh4rzgB5heneYaYXuV6RIehVjgv3I_tmYc9W01lbBe89n6OomvDpx1DXp8JRbbGilGexhE9txdmz7bCThiSNzyt5Saspdp4-kyuj09wWixLP4bdfhXiaeB9Hop8MhG6Rz_lUGrQTp80o7opo7rx6kEo7YLb4xND6bghBGpRtE/qyzvanw1owil8bb/REPERTOIRE+TELEPHONIQUE.exe">Télécharger</a>
+    <button class="buy" onclick="acheter(this.parentElement.querySelector('h3').innerText)">Acheter</button>
+</div>
+
+<!-- Carte 5 -->
+<div class="card">
+    <img src="https://i.ibb.co/fVV2s33W/LECTEUR-VIDEO.jpg">
+    <h3>LECTEUR VIDEO</h3>
+    <p>Regardez toutes vos vidéos avec ce lecteur performant et léger.</p>
+    <p style="font-weight:bold;">Prix : 2000F</p>
+    <a onclick="demanderMotDePasse(this)" data-url="https://download938.mediafire.com/50fxikky1gqgzs-IANc2iEYoOxnDUbJd1bDasQ9Mv-8NORmGSV5KSkwUsrxelhBNwcrUJTPqojBwOVgW3T8P8p2-4oeL288UbQ4B4H1z-6Iz7OcaxwR6KInl9HaYEw-sS-7z41pPWJq92AXuYoBpVRZMptZhQ56LIFW-uzTLsOrsyN0/g3p5b79w6rpfau3/LECTEUR++VIDEO.exe">Télécharger</a>
+    <button class="buy" onclick="acheter(this.parentElement.querySelector('h3').innerText)">Acheter</button>
+</div>
+
+<!-- Carte 6 -->
+<div class="card">
+    <img src="https://i.ibb.co/0pmFrKSN/GENERATEUR-DE-BAT.jpg">
+    <h3>GENERATEUR DE .BAT</h3>
+    <p>Créez vos scripts .BAT facilement pour automatiser vos tâches Windows.</p>
+    <p style="font-weight:bold;">Prix : 2000F</p>
+    <a onclick="demanderMotDePasse(this)" data-url="https://download1530.mediafire.com/4eurj1kfcecgkP8kGl1DMwMuRmLMWkJ2bvudVqYzw_UPkiMshjQqPE_EZD8WIwk9i9fKr2W3j3Uv67qCbnoWAOz9XXcHcJQiSEG9BMyt7RcwfYiDsizW7-S39xZKnXqIrOSJ0E9jWT6WQ3X7xcbdUcwQU8CdNQXLf5Y5K9vJqqJqEPU/4qdg3jsm65mllvq/GENERATEUR+DE+.BAT.exe">Télécharger</a>
+    <button class="buy" onclick="acheter(this.parentElement.querySelector('h3').innerText)">Acheter</button>
+</div>
+
+<!-- Carte 7 -->
+<div class="card">
+    <img src="https://i.ibb.co/BHBXSWYw/TV-WEB.jpg">
+    <h3>TV WEB</h3>
+    <p>Regardez les chaînes TV en ligne depuis votre ordinateur facilement.</p>
+    <p style="font-weight:bold;">Prix : 2000F</p>
+    <a onclick="demanderMotDePasse(this)" data-url="https://download1654.mediafire.com/799eph6hu6dguCGFKk1t60zHlvMqIlmK6E9VpmHFJ9mtOK3p9vzxAgiLDKf3ZZdxv-Mtg_YKDRTSoSLh2Kfoak03LDZ1Xdvzt554DHCq_dGoaviZTZOzbUMb6C1ue2lVCiedr0Ot7KLpFk24i26j4Tw88nJ_1ygnZHk7Jph6_YfAzm4/yyf9si7df1xyvda/TV+WEB.exe">Télécharger</a>
+    <button class="buy" onclick="acheter(this.parentElement.querySelector('h3').innerText)">Acheter</button>
+</div>
+
+<!-- Carte 8 -->
+<div class="card">
+    <img src="https://i.ibb.co/Q3DrPbg6/REPERTOIRE-DE-LOGICIEL.jpg">
+    <h3>REPERTOIRE DE LOGICIEL</h3>
+    <p>Accédez à tous vos logiciels et outils depuis un répertoire centralisé.</p>
+    <p style="font-weight:bold;">Prix : 2000F</p>
+    <a onclick="demanderMotDePasse(this)" data-url="https://download1075.mediafire.com/8cu8tite8zig9ZTEqGfMdHyPyDj43QGeu9iVQ-tEAJAbv-_APQXa42SmxTq4jHTFOgNqDbybSerbpBgVeofwWTmj1EWnaNpBAyeYf8caidEWQ72-g_P0I2oKTeKOmMHICsZOQXiuenUnrc7P53TVbwXImWYtToGLwXdNqROjOR5NnO4/8h1cr5fqiwpifyz/REPERTOIRE+DE+LOGICIEL.exe">Télécharger</a>
+    <button class="buy" onclick="acheter(this.parentElement.querySelector('h3').innerText)">Acheter</button>
+</div>
+
+</div>
+
+<!-- Modals identiques au code précédent (Acheter, Mot de passe, Admin) -->
+<!-- Modal Achat -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <h3 id="nomLogiciel"></h3>
+        <p>Prix : 2000F</p>
+        <p>Payer au : +229 01 47 44 24 16</p>
+        <p>Nom : ETAKOUANA DAVID MAHOUTON</p>
+        <p>Email : <a href='mailto:etsgooddavnet@gmail.com'>etsgooddavnet@gmail.com</a> / <a href='mailto:etakouana35@gmail.com'>etakouana35@gmail.com</a></p>
+        <p>Site : <a href='http://etsgooddavnet-dot.github.io/com/'>http://etsgooddavnet-dot.github.io/com/</a></p>
+        <p>Boutique : <a href='https://etsgooddavnet-dot.github.io/r/'>https://etsgooddavnet-dot.github.io/r/</a></p>
+        <img src="https://i.ibb.co/HLCkrkFf/7c1cbd06bc14443fb4cb385d2a7a10c9.jpg" alt="Image logiciel">
+        <button class="closeBtn" onclick="fermer()">Fermer</button>
+    </div>
+</div>
+
+<!-- Modal Mot de Passe Téléchargement -->
+<div id="passModal" class="modal">
+    <div class="modal-content">
+        <h3>Mot de passe requis</h3>
+        <input type="password" id="passwordInput" placeholder="Entrez le mot de passe">
+        <div id="passMessage" class="modal-message"></div>
+        <div id="passError" class="modal-error"></div>
+        <button onclick="validerMotDePasse()" style="background:#003366;color:white;">Valider</button>
+        <button onclick="fermerPass()" style="background:#cc0000;color:white;margin-left:5px;">Fermer</button>
+    </div>
+</div>
+
+<!-- Modal Admin -->
+<div id="adminModal" class="modal">
+    <div class="modal-content">
+        <h3>Administration</h3>
+        <p>Changer le mot de passe des téléchargements :</p>
+        <input type="text" id="nouveauMDP" placeholder="Nouveau mot de passe">
+        <div id="adminMessage" class="modal-message"></div>
+        <button onclick="changerMDP()" style="background:#003366;color:white;">Valider</button>
+        <button onclick="fermerAdmin()" style="background:#cc0000;color:white;margin-left:5px;">Fermer</button>
+    </div>
+</div>
+
+<script>
+let telechargementURL = "";
+let mdpTelechargement = "52522"; // Mot de passe initial
+
+function acheter(nom){
+    document.getElementById('nomLogiciel').innerText='Logiciel : '+nom;
+    document.getElementById('modal').style.display='flex';
+}
+function fermer(){ document.getElementById('modal').style.display='none'; }
+
+document.getElementById('modal').onclick=function(e){ if(e.target.id==='modal'){ fermer(); }};
+
+function demanderMotDePasse(el){ 
+    telechargementURL = el.getAttribute('data-url'); 
+    document.getElementById('passModal').style.display='flex'; 
+    document.getElementById('passwordInput').focus();
+}
+function validerMotDePasse(){
+    const mot = document.getElementById('passwordInput').value;
+    if(mot === mdpTelechargement){
+        alert("Mot de passe correct ! Téléchargement en cours...");
+        window.location.href = telechargementURL;
+        fermerPass();
+    } else {
+        alert("Mot de passe incorrect !");
+    }
+}
+function fermerPass(){
+    document.getElementById('passModal').style.display='none';
+    document.getElementById('passwordInput').value='';
+}
+document.getElementById('passModal').onclick=function(e){ if(e.target.id==='passModal'){ fermerPass(); }};
+document.getElementById('passwordInput').addEventListener("keypress", function(e){ if(e.key === "Enter") validerMotDePasse(); });
+
+function demanderMotDePasseAdmin(){
+    const adminPass = prompt("Mot de passe Admin :");
+    if(adminPass === "95391036"){
+        document.getElementById('adminModal').style.display='flex';
+    } else {
+        alert("Mot de passe Admin incorrect !");
+    }
+}
+function fermerAdmin(){
+    document.getElementById('adminModal').style.display='none';
+    document.getElementById('nouveauMDP').value='';
+}
+function changerMDP(){
+    const nouveau = document.getElementById('nouveauMDP').value;
+    if(nouveau.trim() !== ""){
+        mdpTelechargement = nouveau;
+        alert("Mot de passe des téléchargements changé avec succès !");
+        fermerAdmin();
+    } else {
+        alert("Veuillez entrer un nouveau mot de passe !");
+    }
+}
+</script>
+
+</body>
+</html>
