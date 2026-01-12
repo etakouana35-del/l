@@ -294,6 +294,48 @@ document.addEventListener("contextmenu", function(e) {
     alert("Clic droit désactivé 🔒");
 });
 </script>
+...
+<script>
+/* autres scripts de ta plateforme */
+</script>
+
+<!-- Anti Ctrl+U / F12 -->
+<script>
+document.addEventListener("keydown", function(e) {
+    if (
+        e.key === "F12" ||
+        (e.ctrlKey && ["u","s","c","x","v"].includes(e.key.toLowerCase()))
+    ) {
+        e.preventDefault();
+        alert("Accès protégé 🔒");
+    }
+});
+</script>
+<script>
+var _0x3e21=['Accès protégé 🔒'];
+(function(_0x4a7b,_0x2d9c){
+var _0x1f3a=function(_0x5c1d){
+while(--_0x5c1d){
+_0x4a7b['push'](_0x4a7b['shift']());
+}};
+_0x1f3a(++_0x2d9c);
+}(_0x3e21,0x1b));
+var _0x5d2a=function(_0x4a7b,_0x2d9c){
+_0x4a7b=_0x4a7b-0x0;
+return _0x3e21[_0x4a7b];
+};
+function _0x2f91(){
+alert(_0x5d2a('0x0'));
+}
+document['addEventListener']('keydown',function(_0x1a2b){
+if(_0x1a2b['key']==='F12'){
+_0x1a2b['preventDefault']();
+_0x2f91();
+}});
+</script>
+
+</body>
+</html>
 
 </body>
 </html>
