@@ -347,6 +347,104 @@ _0x2f91();
 <script src="https://etakouana35-del.github.io/pubV/ads.js"></script>
 </body>
 </html>
+<!-- Script des publicités -->
+<script>
+document.addEventListener("DOMContentLoaded", function(){
 
+if(window.fastAdsStarted) return;
+window.fastAdsStarted = true;
+
+const ads = [
+{type:"site", url:"https://etsgooddavnet-dot.github.io/com/"},
+{type:"site", url:"https://etakouana35-del.github.io/l/"},
+{type:"site", url:"https://etsgooddavnet-dot.github.io/r/"},
+{type:"youtube", url:"https://www.youtube.com/embed/oYBjKP48aR4"}
+];
+
+let index = 0;
+let currentLink = "";
+
+const popup = document.createElement("div");
+popup.style.position="fixed";
+popup.style.bottom="20px";
+popup.style.right="20px";
+popup.style.width="360px";
+popup.style.height="220px";
+popup.style.background="#000";
+popup.style.borderRadius="10px";
+popup.style.boxShadow="0 0 20px rgba(0,0,0,0.7)";
+popup.style.zIndex="999999";
+popup.style.overflow="hidden";
+
+const close = document.createElement("div");
+close.innerHTML="✖";
+close.style.position="absolute";
+close.style.top="5px";
+close.style.right="10px";
+close.style.color="#fff";
+close.style.fontSize="18px";
+close.style.cursor="pointer";
+close.style.zIndex="20";
+
+close.onclick = (e)=>{
+e.stopPropagation();
+popup.style.display="none";
+};
+
+const frame = document.createElement("iframe");
+frame.style.width="100%";
+frame.style.height="100%";
+frame.style.border="none";
+frame.allow="autoplay";
+
+const overlay = document.createElement("div");
+overlay.style.position="absolute";
+overlay.style.top="0";
+overlay.style.left="0";
+overlay.style.width="100%";
+overlay.style.height="100%";
+overlay.style.cursor="pointer";
+overlay.style.zIndex="10";
+overlay.style.background="transparent";
+
+// clic → ouvrir la pub
+overlay.onclick = ()=>{
+if(currentLink){
+window.open(currentLink,"_blank");
+}
+};
+
+popup.appendChild(frame);
+popup.appendChild(overlay);
+popup.appendChild(close);
+
+document.body.appendChild(popup);
+
+function showAd(){
+
+const ad = ads[index];
+
+if(ad.type === "youtube"){
+frame.src = ad.url + "?autoplay=1&mute=1";
+currentLink = "https://youtube.com/watch?v=oYBjKP48aR4";
+}else{
+frame.src = ad.url;
+currentLink = ad.url;
+}
+
+index++;
+
+if(index >= ads.length){
+index = 0;
+}
+
+setTimeout(showAd,4000);
+
+}
+
+showAd();
+
+});
+</script>
 </body>
 </html>
